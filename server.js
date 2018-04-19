@@ -14,6 +14,7 @@ app.use(bodyParser.json({type: '*/*'}))
 routes(app)
 
 
-app.listen(PORT, () => {
-    console.log('ready server on http://localhost:' + PORT)
+const server = app.listen(PORT, () => {
+    const { address, port } = server.address();
+    console.log(`Listening at http://${address}:${port}`)
 })
