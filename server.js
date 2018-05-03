@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const http = require('http');
 
-mongoose.connect('mongodb://HelloWorld:password@54.179.190.121:27017/HelloWorld');
+mongoose.connect('mongodb://ecodrive:password@54.179.190.121:27017/ecodrive');
 
 var port = process.env.PORT || 3000;
 const routes = require('./routes')
@@ -18,4 +18,10 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
-server.listen(port);
+//------------------Server
+server.listen(port); 
+
+//------------------Local
+// app.listen(port, () => {    
+//     console.log('ready server on http://localhost:' + port) 
+// })
