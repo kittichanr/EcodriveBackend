@@ -17,3 +17,16 @@ exports.findById = (req, res, next) => {
         res.json(results) 
     })
 } 
+
+exports.update = (req, res, next) => {    
+    Obd2.findByIdAndUpdate({_id:req.params.id}, 
+                        {$set:{ acceleration: req.body.acceleration,
+                                fuelrate:req.body.fuelrate,
+                                co2:req.body.co2 }}, 
+                                {new: true},
+        function (err, results){
+        if (err) { return next(err) }         
+        res.json(results) 
+    })
+} 
+

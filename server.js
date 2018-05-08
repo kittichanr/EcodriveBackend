@@ -19,9 +19,9 @@ app.set('port', port);
 var server = http.createServer(app);
 
 //------------------Server
-server.listen(port); 
+// server.listen(port); 
 
 //------------------Local
-// app.listen(port, () => {    
-//     console.log('ready server on http://localhost:' + port) 
-// })
+app.listen(port, () => {    
+    console.log('ready server on http://localhost:' + port) 
+})

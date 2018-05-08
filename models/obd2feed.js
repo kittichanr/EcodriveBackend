@@ -7,7 +7,7 @@ const ecodrive = new Schema({
     time : Date,
     distance : Number,
     fuelrate : Number,
-    accelation : Number,
+    acceleration : Number,
     trip : Schema.Types.ObjectId
 
 })

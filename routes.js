@@ -1,6 +1,6 @@
 const user = require('./controllers/users');
 const login = require('./controllers/login');
-const obd2 = require('./controllers/getobd2feed');
+const obd2 = require('./controllers/obd2feed');
 const mongoose = require('mongoose'); 
 mongoose.connect('mongodb://ecodrive:password@54.179.190.121:27017/ecodrive');
 
@@ -21,5 +21,6 @@ module.exports = function (app){
     //------------- OBD2_DATA ------------------------
     app.get('/obd2', obd2.findAll)
     app.get('/getValueEco/:id',obd2.findById)
+    app.put('/updatedata/:id',obd2.update)
 
 }
